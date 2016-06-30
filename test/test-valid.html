@@ -14,7 +14,6 @@
             height: 50px;
             margin-bottom: 20px;
             background-color: #eee;
-            display: none;
         }
     </style>
 
@@ -23,12 +22,24 @@
     <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
     <script type="text/javascript">
         $(function (){
-
+            $('#h5').fullpage({
+                'sectionsColor': ['#254875', '#00FF00', '#254587', '#695684']
+            });
         });
     </script>
     <body>
     <!-- 用于验证 fullpage.js 切换页面，以及内容组织结构可用，组件能够进行动画 -->
         <div id="h5">
+        <div class="page section" id="page-1">
+            <div class="component logo">logo</div>
+            <div class="component slogan">slogano</div>
+        </div>
+        <div class="page section" id="page-2">
+            <div class="component desc">desc</div>
+        </div>
+        <div class="page section" id="page-3">
+            <div class="component bar">bar</div>
+        </div>
         </div>
     </body>
 
