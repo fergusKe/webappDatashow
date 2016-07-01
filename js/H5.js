@@ -42,7 +42,15 @@ var H5 = function() {
 
 	// H5對象初始化呈現
 	this.loader = function() {
-		this.el.fullpage();
+		this.el.fullpage({
+			onLeave: function(index, nextIndex, direction) {
+        $(this).find('.h5_component').trigger('onLeave');
+      },
+      afterLoad: function(anchorLink, index) {
+        $(this).find('.h5_component').trigger('onLoad');
+      }
+		});
+		this.page[0].find('.h5_component').trigger('onLoad');
 		this.el.show();
 	}
 

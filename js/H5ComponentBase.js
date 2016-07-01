@@ -3,8 +3,8 @@ var H5ComponentBase = function(name, cfg) {
 	var cfg = cfg || {};
 	var id = ( 'h5_c_' + Math.random() ).replace('.', '_');
 	// 把當前的組件類型添加到樣式中進行標記
-	var cls = 'h5_component_name_' + name + ' h5_component_' + cfg.type;
-	var component = $('<div class="h5_component ' + cls +'" id="' + id + '">');
+	var cls = 'h5_component_' + cfg.type;
+	var component = $('<div class="h5_component ' + cls + ' h5_component_name_' + name +'" id="' + id + '">');
 	
 	cfg.text   && component.text(cfg.text);
 	cfg.width  && component.width(cfg.width / 2);
@@ -23,13 +23,11 @@ var H5ComponentBase = function(name, cfg) {
 	component.on('onLoad', function() {
 		component.addClass(cls + '_load').removeClass(cls + '_leave');
 		cfg.animateIn && component.animate( cfg.animateIn );
-		console.log(cfg.animateIn);
     return false;
   });
   component.on('onLeave', function() {
   	component.addClass(cls + '_leave').removeClass(cls + '_load');
   	cfg.animateOut && component.animate( cfg.animateOut );
-  	console.log(cfg.animateOut);
     return false;
   });
 
