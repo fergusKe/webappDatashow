@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
 
     <style type="text/css">
+    	body {
+    		margin: 0;
+    		padding: 0;
+    	}
     </style>
 
 
@@ -34,12 +38,30 @@
 	    	var h5 = new H5();
 	    	h5
 	    	.addPage('face', '首頁')
-	    		// .addComponent('logo', {text: 'logo'})
-	    		// .addComponent('slogan', {text: 'slogan'})
+	    		.addComponent('logo', {
+	    			text: 'logo',
+	    			width: 400,
+	    			height: 100,
+	    			css: {backgroundColor: 'red', top: 200},
+	    			center: true
+	    		})
+	    		.addComponent('slogan', {
+	    			text: 'slogan',
+	    			width: 400,
+	    			height: 100,
+	    			css: {backgroundColor: 'red', top: 350},
+	    			center: true
+	    		})
 	    	.addPage('desc', '核心理念頁')
-	    		// .addComponent('caption', {text: '核心理念'})
+	    		.addComponent('caption', {
+	    			text: '核心理念',
+	    			width: 400,
+	    			height: 100,
+	    			css: {backgroundColor: 'green', top: 350},
+	    			center: true
+	    		})
 	    	.addPage('page-3', '課程分布方向頁')
-	    		// .addComponent('caption', {text: '課程方向分布'})
+	    		.addComponent('caption', {text: '課程方向分布'})
     		.loader();
 	    });
     </script>
