@@ -43,7 +43,7 @@
             });
             $('.component').on('onLoad', function() {
                 $(this).fadeIn();
-                return false;  // 避免冒泡事件 - 當.component被trigger的時候也會執行.page的事件
+                return false;  // 避免冒泡事件 - 當.component被trigger的時候也會執行.page的事件，造成無限循環
             });
             $('.component').on('onLeave', function() {
                 $(this).fadeOut();
