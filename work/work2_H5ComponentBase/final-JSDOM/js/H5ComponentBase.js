@@ -32,6 +32,7 @@ var H5ComponentBase =function ( name, cfg ) {
         // 任务二：(1)支持relativeTo参数（修改 DOM 结构实现方法）
         if( cfg.relativeTo ){
             var parent = component.parent().find('.h5_component_name_'+cfg.relativeTo);
+            console.log('parent.size() = ', parent.size());
             if(parent.size()){
                 component.appendTo(parent);
             }
